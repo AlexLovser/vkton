@@ -72,14 +72,38 @@ $ pip install PIL vk-api
 
 ```
 
+Базовое использование.
+Мой модуль гибко решает проблему навигации в боте. В каждом декораторе команды обязательным является параметр **back_to**. В него следует вписать название функции, которая будет вызвана в случае попытки пользоветелем выйти назад. Это позволяет не задумываясь сделать вложенные меню.
+
 ```py
 from vkton import Bot, Commands, Context
+from vkton.ui import Button
 
-@Commands.command(keywords=["Поздароваться", 'Say hello'])
+
+# Команду можно вызвать по любому слову из **keywords** или по названию функции (hello, meteo ...)
+@Commands.command(keywords=["Поздароваться", 'Say hello'], back_to='hello')
 def hello(ctx: Context):
     ctx.user.send(
-        'Hello, my Friend! You are using VK-ton by Alex Lovser! Nice to see you!'
+        'Hello, my Friend! You are using VK-ton by Alex Lovser! Nice to see you!',
+        keys=[
+          Button('Погода', 'white'), # В данный кнопках по умолчанию параметр inline=False
+          Button('Кнопка с ссылкой', 'red', link='https://pornhub.com')
+        ]
     )
+
+
+# Если будет написана фраза "Назад", то будет вызвана функция указанная в back_to
+@Commands.command(keywords=['Погода'], back_to='hello') 
+def meteo(ctx: Context):
+    ctx.user.send(
+        'Погода обещает быть замечательной',
+        keys=[
+          bot.back_button # Заготовленная красаня кнопка "Назад"
+        ]
+    )
+
+# - hello() 
+# - - meteo()
 
 ```
 
@@ -89,7 +113,7 @@ def hello(ctx: Context):
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-С :heart: от <a href="https://github.com/AlexLovser" target="_blank">{{Alex Lovser}}</a>
+С :heart: от <a href="https://github.com/AlexLovser" target="_blank">Alex Lovser</a>
 
 &#xa0;
 
