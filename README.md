@@ -37,7 +37,7 @@
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <!-- <a href="#memo-license">License</a> &#xa0; | &#xa0; -->
   <a href="https://github.com/{{AlexLovser}}" target="_blank">Author</a>
 </p>
 
@@ -65,12 +65,24 @@
 
 ```bash
 # Установка самого модуля
-$ pip install vk-ton
+$ pip install vkton
 
 # Проверка, что все зависимости установлены
 $ pip install PIL vk-api
 
 ```
+
+```py
+from vkton import Bot, Commands, Context
+
+@Commands.command(keywords=["Поздароваться", 'Say hello'])
+def hello(ctx: Context):
+    ctx.user.send(
+        'Hello, my Friend! You are using VK-ton by Alex Lovser! Nice to see you!'
+    )
+
+```
+
 
 ## :memo: License ##
 
