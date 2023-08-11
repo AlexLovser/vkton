@@ -33,27 +33,41 @@
 <hr> -->
 
 <p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <!-- <a href="#memo-license">License</a> &#xa0; | &#xa0; -->
-  <a href="https://github.com/AlexLovser" target="_blank">Author</a>
+  <a href="#dart-about">О библотеке</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Преимущества</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Технологии</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Начало</a> &#xa0; | &#xa0;
+  <a href="#memo-license">Лицензия</a> &#xa0; | &#xa0;
+  <a href="https://github.com/AlexLovser" target="_blank">Автор</a>
 </p>
+
+## Содержание
+<p align="center">
+  <a href="#каждой-функции-вы-можете-добавить-параметры:">Параметры для команд</a> &#xa0;\ 
+  <a href="#параметры-для-отправки-сообщения">Параметры для сообщения</a>\
+  <a href="#вы-можете-удобно-настроить-ряды-кнопок-с-помощью-списков">Кнопки и их конфигурация</a>\
+  <a href="#создания-запланированных-действий">Таск-лупы</a>\
+  <a href="#отправка-карусели">Отправка каруселей</a>\
+	<a href="#ожидание-ответа-от-пользователя">Ожидание ответа от пользователя</a>\
+	<a href="#ожидание-ответа-от-нескольких-пользователей">Ожидание ответа от нескольких пользователей</a>\
+	<a href="#переадресация-и-возвращение назад">Переадресация и возвращение назад</a>
+
+</p>
+
 
 <br>
 
-## :dart: About ##
+## :dart: О библотеке ##
 
 `vk-ton` это модуль для упрощенного создания VK ботов на Python. В библиотеке вы найдете все необходимые классы, для ванильного использования vk-api.
 
-## :sparkles: Features ##
+## :sparkles: Преимущества ##
 
 :heavy_check_mark: Удобное и быстрое создание цепочек команд;\
 :heavy_check_mark: Возможность разделять код в несколько файлов;\
 :heavy_check_mark: Все необходимые функции для быстрого старта;
 
-## :rocket: Technologies ##
+## :rocket: Технологии ##
 
 Технологии использованные в проекте:
 
@@ -61,7 +75,7 @@
 - [VK-API](https://dev.vk.com/ru/reference)
 
 
-## :checkered_flag: Starting ##
+## :checkered_flag: Начало ##
 
 ```bash
 # Установка самого модуля
@@ -131,7 +145,7 @@ bot.run() # запуск бота
 		if mentioned_user_id is not None:
 			mentioned_user = bot.get_user(mentioned_user_id) # -> User | None
 			if mentioned_user:
-				mentioned_user.send(f'{ctx.user.tag} передвал вам привет!')
+				mentioned_user.send(f'{ctx.user.tag} передал вам привет!')
 ```
 
 ### __Параметры для отправки сообщения:__
