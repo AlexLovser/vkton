@@ -44,7 +44,7 @@ class Bot:
 	sub_events = {}
 	user_cache: dict[str, User] = {}
  
-	def __init__(self, token, *, cache_refresh_timeout=300):
+	def __init__(self, token):
 		self.token = token
 		self.vk_session = VkApi(token=token)
 		self.longpoll = MyLongPool(self.vk_session)
