@@ -191,6 +191,50 @@ def carousel(ctx: Context):
 	)
 ```
 
+## __Ожидание ответа от пользователя:__
+```py
+
+	ctx.user.send('Сколько будет 2 + 2?')
+
+	# Если check() возвращает True, то код продолжится и будет возращено сообщение пользователя
+	# Иначе бот будет продалжать ждать сообщение от пользователя
+	def check(message: vkton.objects.Message) -> bool:
+		return message.content == '4'
+
+	user_message = bot.wait_message(ctx.user, timeout=24 * 3600, check=check) # -> <Message> | None
+
+	if user_message is not None:
+		user.send('Правильно! Это 4')
+	else:
+		user.send('Правильного ответа не поступило')
+
+```
+
+## __Ожидание ответа от нескольких пользователей:__
+Так как функция **wait_message** блокирует выполнение кода, ожидать ответ от нескольких пользователей не представляется возможным. Поэтому в качестве первого аргумета можно передать массив с пользователями 
+```py
+
+users = [
+	bot.get_user(12345678),
+	bot.get_user(87654321),
+	bot.get_user(12348765),
+]
+
+for user in users:
+	user.send('Сколько будет 2 + 2?')
+
+check = lambda message: message.content == '4'
+
+messages = bot.wait_message(users, timeout=5 * 60, check=check) # -> dict[user_id, <Message> | None]
+
+# По окончании вы получите словарь с данными ответов от нескольких пользователей
+# Если пользователь не ответил или ответ не прошел проверку, то вместо сообщения будет None
+
+print(messages)
+
+```
+
+
 ## :memo: License ##
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.

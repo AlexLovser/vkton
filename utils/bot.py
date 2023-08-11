@@ -51,8 +51,6 @@ class Bot:
 		self.db = ConnectionManager()
 		self.back_button = Button('Назад', 'red')
 
-		
-		
 		logging.info('The bot is online')
 
 	def clean_text(self, string: str) -> str:
@@ -117,16 +115,16 @@ class Bot:
 					raise errors.CancelError(user)
 					
 
-		if any(m == None for m in messages.values()):
-			for u, m in messages.items():
-				author = self.get_user(u)
-				if m is None:
-					author.send('Вы слишком долго отправляли сообщение! Бот устал ждать...')
+		# if all(m == None for m in messages.values()):
+		# 	for u, m in messages.items():
+		# 		author = self.get_user(u)
+		# 		if author:
+		# 			author.send('Вы слишком долго отправляли сообщение! Бот устал ждать...')
 
-				local_context = Context(author, m)
-				Commands.go_back(local_context)
+		# 		local_context = Context(author, m)
+		# 		Commands.go_back(local_context)
 
-			raise errors.TimeoutResponseError()
+		# 	raise errors.TimeoutResponseError()
 			
 		if len(messages) == 1:
 			return messages[list(messages)[0]]

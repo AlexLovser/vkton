@@ -45,6 +45,7 @@ class Message:
 	def __init__(self, content: str, author: User, date, message_id, payload=None, attachments=None):
 		self.content = content
 		self.author = author
+		self.user = self.author
 		self.date = date
 		self.payload = payload
 		self.message_id = message_id

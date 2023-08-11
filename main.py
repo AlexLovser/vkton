@@ -9,6 +9,7 @@ from cogs.maincog import *
 bot = Bot(TOKEN)
 
 
+bot.wait_message()
 @Commands.task(timeout=3600) # время в секундах
 def c(ctx: Context):
 	bot.get_user(12345678).send(
