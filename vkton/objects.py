@@ -6,7 +6,6 @@ import os
 from PIL import Image
 
 
-
 class Object:
 	def __getattribute__(self, __name: str):
 		if __name != 'last_used':
