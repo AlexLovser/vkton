@@ -53,16 +53,3 @@ class CarouselField:
 
 		return body
 
-
-class TeamCarouselField(CarouselField):
-	def __init__(self, ticket):
-		form = ticket['form']
-		super().__init__(
-			photo_id=form['photo_for_car'], 
-			title=f"[{form['tag']}] {form['name']}", 
-			description='Команда',
-			buttons=[
-				Button('Критерии', 'зеленый', inline=True, payload={'team': form['tag']})
-			]
-		)
-	
