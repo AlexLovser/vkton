@@ -46,27 +46,26 @@
 
 ## :dart: About ##
 
-`vk-ton` это модуль для упрощенного создания VK ботов на Python
+`vk-ton` это модуль для упрощенного создания VK ботов на Python. В библиотеке вы найдете все необходимые классы, для ванильного использования vk-api.
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Удобное и быстрое создание цепочек команд;\
+:heavy_check_mark: Возможность разделять код в несколько файлов;\
+:heavy_check_mark: Все необходимые функции для быстрого старта;
 
 ## :rocket: Technologies ##
 
-The following tools were used in this project:
+Технологии использованные в проекте:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Python3](https://python.org/)
+- [VK-API](https://dev.vk.com/ru/reference)
+
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Прежде чем начать, установите [Python3](https://python.org/)
+
 
 ## :checkered_flag: Starting ##
 
@@ -87,8 +86,8 @@ $ pip install PIL vk-api
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{AlexLovser}}" target="_blank">{{Alex Lovser}}</a>
+С :heart: от <a href="https://github.com/{{AlexLovser}}" target="_blank">{{Alex Lovser}}</a>
 
 &#xa0;
 
-<a href="#top">Back to top</a>
+<a href="#top">Вернуться вверх</a>
