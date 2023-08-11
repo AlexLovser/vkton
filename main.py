@@ -8,14 +8,14 @@ from cogs.maincog import *
 bot = Bot(TOKEN)
 
 
-@Commands.command(keywords=['начать', 'обновить'], back_to='start')
-def start(ctx: Context):
-	ctx.user.send(
-		'Добро пожаловать в сообщество!',
-		keys=[
-			Button('QQ', 'red')
-		],
-	)
+@Commands.task(timeout=3600) # время в секундах
+def say_hello_task(ctx: Context):
+	bot.get_user(12345678).send(
+		'Hello, world!',
+		attachments='photo12345678_12345678'
+		
+    )
+
 
 
 # @Commands.task(timeout=5)
