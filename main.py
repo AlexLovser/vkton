@@ -29,15 +29,5 @@ bot = Bot(TOKEN)
 
 
 
-## VK-ton 
-Это модуль для упрощенного создания VK ботов на Python
-
-### Installing dependencies
-`pip install vk-ton`
-
-
-## Getting started
-
-
 
 bot.run()

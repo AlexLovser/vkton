@@ -9,19 +9,19 @@
 <h1 align="center">VK-Ton</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{AlexLovser}}/vk-ton?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{AlexLovser}}/VK-ton?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{AlexLovser}}/vk-ton?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{AlexLovser}}/VK-ton?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{AlexLovser}}/vk-ton?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{AlexLovser}}/VK-ton?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{AlexLovser}}/vk-ton?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/{{AlexLovser}}/VK-ton?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/{{AlexLovser}}/vk-ton?color=56BEB8" />
+  <img alt="Github issues" src="https://img.shields.io/github/issues/{{AlexLovser}}/VK-ton?color=56BEB8" />
 
-  <img alt="Github forks" src="https://img.shields.io/github/forks/{{AlexLovser}}/vk-ton?color=56BEB8" />
+  <img alt="Github forks" src="https://img.shields.io/github/forks/{{AlexLovser}}/VK-ton?color=56BEB8" />
 
-  <img alt="Github stars" src="https://img.shields.io/github/stars/{{AlexLovser}}/vk-ton?color=56BEB8" />
+  <img alt="Github stars" src="https://img.shields.io/github/stars/{{AlexLovser}}/VK-ton?color=56BEB8" />
 </p>
 
 <!-- Status -->
