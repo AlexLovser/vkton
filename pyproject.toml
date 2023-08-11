@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vkton"
-version = "0.1.6"
+version = "0.1.8"
 description = "Модуль на Python позволяющий быстро создавать VK ботов"
 authors = ["Alex Lovser <tabalex2005@gmail.com>"]
 license = "MIT"
