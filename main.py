@@ -37,16 +37,7 @@ bot = Bot(TOKEN)
 
 
 ## Getting started
-```py
-from vkton import Bot, Commands, Context
 
-@Commands.command(keywords=["Поздароваться", 'Say hello'])
-def hello(ctx: Context):
-    ctx.user.send(
-        'Hello, my Friend! You are using VK-ton by Alex Lovser! Nice to see you!'
-    )
-
-```
 
 
 bot.run()
