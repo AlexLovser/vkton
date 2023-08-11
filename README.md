@@ -90,8 +90,8 @@ def hello(ctx: Context):
     ctx.user.send(
         'Hello, my Friend! You are using VK-ton by Alex Lovser! Nice to see you!',
         keys=[
-          Button('Погода', 'white'),
-          Button('Кнопка с ссылкой', 'red', link='https://pornhub.com')
+            Button('Погода', 'white'),
+            Button('Кнопка с ссылкой', 'red', link='https://pornhub.com')
         ]
     )
 
@@ -101,7 +101,7 @@ def meteo(ctx: Context):
     ctx.user.send(
         'Погода обещает быть замечательной',
         keys=[
-          bot.back_button # Заготовленная красная кнопка "Назад"
+            bot.back_button # Заготовленная красная кнопка "Назад"
         ]
     )
 
@@ -122,13 +122,13 @@ bot.run() # запуск бота
 ```py
 ... 
 keys=[
-  [ # Если вы хотите сгруппировать кнопки на одном ряду, то просто оберните их в список
-    Button('1', 'white'), Button('2', 'white'),
-  ],
-  Button('3', 'white'), Button('4', 'white'), Button('5', 'white'),
-  [
-    bot.back_button
-  ]
+    [ # Если вы хотите сгруппировать кнопки на одном ряду, то просто оберните их в список
+        Button('1', 'white'), Button('2', 'white'),
+    ],
+        Button('3', 'white'), Button('4', 'white'), Button('5', 'white'),
+    [
+        bot.back_button
+    ]
 ]
 # [   1  ][  2  ]
 # [ 3 ][ 4 ][ 5 ]
@@ -153,10 +153,10 @@ keys=[
 ```py
 @Commands.task(timeout=3600) # время в секундах
 def say_hello_task():
-  bot.get_user(12345678).send(
-    'Hello, world!',
-    attachments='photo12345678_12345678'
-  )
+    bot.get_user(12345678).send(
+        'Hello, world!',
+        attachments='photo12345678_12345678'
+    )
 ```
 В данном случае бот будет раз в 1 час (3600 секунд) отправлять пользователю с id = 123456789 сообщение.
 **При перезупуске бота таймер сбрасывается**
@@ -165,29 +165,30 @@ def say_hello_task():
 ```py
 from vkton.ui import CarouselField
 
+
 @Commands.command(keywords=['Карусель'], back_to='start') 
 def carousel(ctx: Context):
-	bot.get_user(12345678).send(
-		'Hello, world!',
-      carousel=[
-        CarouselField(
-          photo_id='photo12345678_12345678',
-          title='TITLE1',
-          description='description1',
-          buttons=[
-              Button('Подробнее', 'blue', payload={'some_id': '12345'})
-          ]
-      ),
-      CarouselField(
-        photo_id='photo12345678_12345678',
-        title='TITLE2',
-        description='description2',
-        buttons=[
-            Button('Подробнее', 'blue', payload={'some_id': '67890'})
+    bot.get_user(12345678).send(
+        'Hello, world!',
+        carousel=[
+            CarouselField(
+                photo_id='photo12345678_12345678',
+                title='TITLE1',
+                description='description1',
+                buttons=[
+                    Button('Подробнее', 'blue', payload={'some_id': '12345'})
+                ]
+            ),
+            CarouselField(
+                photo_id='photo12345678_12345678',
+                title='TITLE2',
+                description='description2',
+                buttons=[
+                    Button('Подробнее', 'blue', payload={'some_id': '67890'})
+                ]
+            ),
         ]
-      ),
-    ]
-  )
+    )
 ```
 
 ## :memo: License ##
