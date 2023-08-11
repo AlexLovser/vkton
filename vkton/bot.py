@@ -43,8 +43,9 @@ class Bot:
 	sub_events = {}
 	user_cache: dict[str, User] = {}
  
-	def __init__(self, token):
+	def __init__(self, token, gim=None):
 		self.token = token
+		self.gim = gim
 		self.vk_session = VkApi(token=token)
 		self.longpoll = MyLongPool(self.vk_session)
 		self.back_button = Button('Назад', 'red')
