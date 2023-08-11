@@ -120,15 +120,16 @@ bot.run() # запуск бота
 	# Отправка: Какой-то тест 1000 Вася
 	# Ответ от бота: Вы отправили команду "test" где arg1=1000 arg2=Вася
 ```
-Если параметром должно быть упоминание пользователя, например: Передать привет @alexlovser
-Можно использовать готовый метод для получения id того, кого упомянули:
+Если параметром должно быть упоминание пользователя\
+Например: Передать привет @alexlovser\
+Можно использовать готовый метод **bot.parse_tag** для получения id того, кого упомянули:
 
 ```py
 	@Commands.command(keywords=['Передать привет'], back_to='hello') 
 	def say_hello(ctx: Context, mention):
-		mentioned_user_id = bot.parse_tag(mention)
+		mentioned_user_id = bot.parse_tag(mention) # -> int | None
 		if mentioned_user_id is not None:
-			mentioned_user = bot.get_user(mentioned_user_id)
+			mentioned_user = bot.get_user(mentioned_user_id) # -> User | None
 			if mentioned_user:
 				mentioned_user.send(f'{ctx.user.tag} передвал вам привет!')
 ```
