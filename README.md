@@ -1,27 +1,27 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="VK-Ton" />
+  <img src="./.github/app.gif" alt="vkton" />
 
   &#xa0;
 
   <!-- <a href="https://vkton.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">VK-Ton</h1>
+<h1 align="center">vkton</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/AlexLovser/VK-ton?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/AlexLovser/vkton?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/AlexLovser/VK-ton?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/AlexLovser/vkton?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/AlexLovser/VK-ton?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/AlexLovser/vkton?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/AlexLovser/VK-ton?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/AlexLovser/vkton?color=56BEB8">
 
-  <img alt="Github issues" src="https://img.shields.io/github/issues/AlexLovser/VK-ton?color=56BEB8" />
+  <img alt="Github issues" src="https://img.shields.io/github/issues/AlexLovser/vkton?color=56BEB8" />
 
-  <img alt="Github forks" src="https://img.shields.io/github/forks/AlexLovser/VK-ton?color=56BEB8" />
+  <img alt="Github forks" src="https://img.shields.io/github/forks/AlexLovser/vkton?color=56BEB8" />
 
-  <img alt="Github stars" src="https://img.shields.io/github/stars/AlexLovser/VK-ton?color=56BEB8" />
+  <img alt="Github stars" src="https://img.shields.io/github/stars/AlexLovser/vkton?color=56BEB8" />
 </p>
 
 <!-- Status -->
@@ -59,7 +59,7 @@
 
 ## :dart: О библотеке ##
 
-`vk-ton` это модуль для упрощенного создания VK ботов на Python. В библиотеке вы найдете все необходимые классы, для ванильного использования vk-api.
+`vkton` это модуль для упрощенного создания VK ботов на Python. В библиотеке вы найдете все необходимые классы, для ванильного использования vk-api.
 
 ## :sparkles: Преимущества ##
 
@@ -102,7 +102,7 @@ bot = Bot("*group token here*")  # активация бота
 @Commands.command(keywords=["Привет", 'Say hello'], back_to='hello')
 def hello(ctx: Context):
 	ctx.user.send(
-		'Hello, my Friend! You are using VK-ton by Alex Lovser! Nice to see you!',
+		'Hello, my Friend! You are using vkton by Alex Lovser! Nice to see you!',
 		keys=[
 			Button('Погода', 'white'),
 			Button('Кнопка с ссылкой', 'red', link='https://pornhub.com')
