@@ -1,11 +1,10 @@
 from vk_api import VkApi, keyboard
-from .connect import ConnectionManager
 from vk_api.longpoll import VkLongPoll, VkEventType
 import threading
 from .objects import User, Message
 from .classes import *
 from .config import *
-import utils.errors as errors 
+import vkton.errors as errors 
 from time import sleep
 import datetime
 from uuid import uuid4
@@ -48,7 +47,6 @@ class Bot:
 		self.token = token
 		self.vk_session = VkApi(token=token)
 		self.longpoll = MyLongPool(self.vk_session)
-		self.db = ConnectionManager()
 		self.back_button = Button('Назад', 'red')
 
 		logging.info('The bot is online')

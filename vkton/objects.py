@@ -1,6 +1,6 @@
 from datetime import datetime
-from utils.config import TOKEN, GIM
-from utils.errors import *
+from vkton.config import TOKEN, GIM
+from vkton.errors import *
 import requests
 import os
 from PIL import Image

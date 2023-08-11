@@ -1,4 +1,4 @@
-from utils.classes import Commands, Context
+from vkton.classes import Commands, Context
 
 
 @Commands.command(keywords=['начать'], back_to='start')

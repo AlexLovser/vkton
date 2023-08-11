@@ -1,7 +1,7 @@
 import functools
 from .objects import User, Message
 from .ui import *
-import utils.errors as errors
+import vkton.errors as errors
 
 
 

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "vkton"
+version = "0.1.6"
+description = "Модуль на Python позволяющий быстро создавать VK ботов"
+authors = ["Alex Lovser <tabalex2005@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+vk-api = "^11.9.9"
+uuid = "^1.30"
+pillow = "^10.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
