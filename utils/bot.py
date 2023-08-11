@@ -188,7 +188,13 @@ class Bot:
 		if fields is None:
 			fields = []
 
+		fields = [
+			i.body if isinstance(i, CarouselField) else i
+			for i in fields
+		]
+
 		for i in fields:
+
 			if i.get('photo_id'):
 				i['photo_id'] = self.photo_id_from_url(i['photo_id']).replace('photo', '')
 			if i.get('buttons'):

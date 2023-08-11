@@ -153,17 +153,42 @@ keys=[
 ```py
 @Commands.task(timeout=3600) # время в секундах
 def say_hello_task():
-	bot.get_user(12345678).send(
-		'Hello, world!',
-		attachments='photo12345678_12345678'
-		
-    )
+  bot.get_user(12345678).send(
+    'Hello, world!',
+    attachments='photo12345678_12345678'
+  )
 ```
 В данном случае бот будет раз в 1 час (3600 секунд) отправлять пользователю с id = 123456789 сообщение.
 **При перезупуске бота таймер сбрасывается**
 
+## __Отправка карусели:__
+```py
+from vkton.ui import CarouselField
 
-
+@Commands.command(keywords=['Карусель'], back_to='start') 
+def carousel(ctx: Context):
+	bot.get_user(12345678).send(
+		'Hello, world!',
+      carousel=[
+        CarouselField(
+          photo_id='photo12345678_12345678',
+          title='TITLE1',
+          description='description1',
+          buttons=[
+              Button('Подробнее', 'blue', payload={'some_id': '12345'})
+          ]
+      ),
+      CarouselField(
+        photo_id='photo12345678_12345678',
+        title='TITLE2',
+        description='description2',
+        buttons=[
+            Button('Подробнее', 'blue', payload={'some_id': '67890'})
+        ]
+      ),
+    ]
+  )
+```
 
 ## :memo: License ##
 
