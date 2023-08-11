@@ -71,17 +71,13 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 ## :checkered_flag: Starting ##
 
 ```bash
-# Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/vk-ton
+# Installing the module
+$ pip install vk-ton
 
-# Access
-$ cd vk-ton
+# Installing dependencies
+$ pip install PIL vk-api
 
-# Install dependencies
-$ yarn
 
-# Run the project
-$ yarn start
 
 # The server will initialize in the <http://localhost:3000>
 ```
@@ -91,7 +87,7 @@ $ yarn start
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/{{AlexLovser}}" target="_blank">{{Alex Lovser}}</a>
 
 &#xa0;
 
