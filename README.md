@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/logo.png" alt="vkton" />
+  <img src="./logo.png" alt="vkton" />
 
   &#xa0;
 
