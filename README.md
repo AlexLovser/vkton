@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="vkton" />
+  <img src="./.github/logo.png" alt="vkton" />
 
   &#xa0;
 
@@ -33,11 +33,11 @@
 <hr> -->
 
 <p align="center">
-  <a href="#dart-about">О библотеке</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Преимущества</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Технологии</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Начало</a> &#xa0; | &#xa0;
-  <a href="#memo-license">Лицензия</a> &#xa0; | &#xa0;
+  <a href="#о-библотеке">О библотеке</a> &#xa0; | &#xa0; 
+  <a href="#преимущества">Преимущества</a> &#xa0; | &#xa0;
+  <a href="#технологии">Технологии</a> &#xa0; | &#xa0;
+  <a href="#начало">Начало</a> &#xa0; | &#xa0;
+  <a href="#лицензия">Лицензия</a> &#xa0; | &#xa0;
   <a href="https://github.com/AlexLovser" target="_blank">Автор</a>
 </p>
 
@@ -285,7 +285,7 @@ print(messages)
 ### Commands.redirect(ctx, to)
 Чтобы попасть вопределенную точку программы, можно вызвать данный метод, в параметр **to** необходимо вписать название конкретной функции
 
-## :memo: License ##
+## Лицензия ##
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
