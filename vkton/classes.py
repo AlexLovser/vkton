@@ -67,7 +67,7 @@ class Commands:
 		return outer_wrapper
 
 	@classmethod
-	def event(cls, *, timeout: int | float):
+	def event(cls):
 		def outer_wrapper(func):
 			event_name = func.__name__
 			possible_events = ['on_message']

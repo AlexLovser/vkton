@@ -295,7 +295,7 @@ print(messages)
 ```py
 
 @Commands.event()
-def on_message(message: Message):
+def on_message(message: vkton.objects.Message):
 	print(message.content)
 
 ```
