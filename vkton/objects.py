@@ -30,7 +30,7 @@ class User(Object):
 
 	@property
 	def dialog_url(self):
-		return f'https://vk.com/gim{self.bot.gim}?sel={self.id}'
+		return f'https://vk.com/gim{self.bot.group_id}?sel={self.id}'
 
 	def send(self, text, keys: list = None, photo_url: str = None, carousel: list = None):
 		self.bot.send(text, user_id=self.id, keys=keys, photo_url=photo_url, carousel=carousel)

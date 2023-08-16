@@ -96,7 +96,7 @@ from vkton import Bot, Commands, Context
 from vkton.ui import Button
 
 
-bot = Bot("*group token here*")  # активация бота
+bot = Bot("*group token here*", group_id=<айди группы>)  # активация бота
 
 
 @Commands.command(keywords=["Привет", 'Say hello'], back_to='hello')

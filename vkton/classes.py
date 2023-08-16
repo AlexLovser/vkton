@@ -6,11 +6,12 @@ import vkton.errors as errors
 
 
 class Context:
-	def __init__(self, user: User, message: Message):
+	def __init__(self, user: User, message: Message, event):
 		self.user = user
 		self.message = message
 		self.content = message.content
 		self.send = self.user.send
+		self.event = event
 
 
 class Commands:

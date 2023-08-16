@@ -43,9 +43,9 @@ class Bot:
 	sub_events = {}
 	user_cache: dict[str, User] = {}
  
-	def __init__(self, token, gim=None):
+	def __init__(self, token, group_id):
 		self.token = token
-		self.gim = gim
+		self.group_id = group_id
 		self.vk_session = VkApi(token=token)
 		self.longpoll = MyLongPool(self.vk_session)
 		self.back_button = Button('Назад', 'red')
@@ -384,7 +384,7 @@ class Bot:
 							payload=payload, 
 							attachments=attachments
 						)
-						context = Context(user, message) # создание контекста, информация о команде
+						context = Context(user, message, e) # создание контекста, информация о команде
 						sub_waiter_event = self.sub_events.get(user.id)
 						main_waiter_event = self.events.get(sub_waiter_event)
 						is_back_command = message.content.lower() in CANCEL_WORDS
