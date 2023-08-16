@@ -43,12 +43,13 @@ class Bot:
 	sub_events = {}
 	user_cache: dict[str, User] = {}
  
-	def __init__(self, token, group_id):
+	def __init__(self, token, group_id, allowed_users='__all__'):
 		self.token = token
 		self.group_id = group_id
 		self.vk_session = VkApi(token=token)
 		self.longpoll = MyLongPool(self.vk_session)
 		self.back_button = Button('Назад', 'red')
+		self.allowed_users = allowed_users
 
 		logging.info('The bot is online')
 
@@ -364,7 +365,7 @@ class Bot:
 
 		for event in self.longpoll.listen(): # слушатель ивентов
 			if event.type == VkEventType.MESSAGE_NEW and event.to_me:
-				if ALLOWED_USERS == '__all__' or event.user_id in ALLOWED_USERS:
+				if self.allowed_users == '__all__' or event.user_id in self.allowed_users:
 					def do(e):
 						user_id = e.user_id
 						payload = event.extra_values.get('payload', 'None')
@@ -388,6 +389,9 @@ class Bot:
 						sub_waiter_event = self.sub_events.get(user.id)
 						main_waiter_event = self.events.get(sub_waiter_event)
 						is_back_command = message.content.lower() in CANCEL_WORDS
+
+						if 'on_message' in Commands.events:
+							threading.Thread(name=f'Event "on_message"', target=Commands.events['on_message']['func'], args=(message, )).start()
 
 						try:
 							if main_waiter_event:

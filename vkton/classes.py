@@ -17,6 +17,7 @@ class Context:
 class Commands:
 	funcs = {}
 	tasks = {}
+	events = {}
 
 	@classmethod
 	def command(cls, *, keywords: list[str] = None, back_to: str, admin_only: bool = False):
@@ -54,6 +55,27 @@ class Commands:
 			
 			cls.tasks[func.__name__] = {
 				'timeout': timeout,
+				'func': func,
+			}			
+			
+			@functools.wraps(func)
+			def wrapper(*args, **kwargs):
+				return func(*args, **kwargs)
+			
+			return wrapper
+		
+		return outer_wrapper
+
+	@classmethod
+	def event(cls, *, timeout: int | float):
+		def outer_wrapper(func):
+			event_name = func.__name__
+			possible_events = ['on_message']
+
+			if event_name not in possible_events:
+				raise ValueError(f"VKton не поддерживает событие '{event_name}'")
+			
+			cls.events[event_name] = {
 				'func': func,
 			}			
 			
