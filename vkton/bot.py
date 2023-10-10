@@ -37,13 +37,28 @@ class MyLongPool(VkLongPoll):
 
 
 class Bot:
+	__singleton = None
 	vk_session = None
 	longpool = None
 	events = {}
 	sub_events = {}
 	user_cache: dict[str, User] = {}
+
+	def __new__(cls, *args, **kwargs):
+		if isinstance(cls.__singleton, cls):
+			return cls.__singleton
+		
+		cls.__singleton = cls(*args, **kwargs)
+		return cls.__singleton
+
  
-	def __init__(self, token, group_id, allowed_users='__all__'):
+	def __init__(self, token: str = None, group_id: int = None, allowed_users = '__all__'):
+		if token is None:
+			raise ValueError('You haven\'t passed the bot token!')
+		
+		if token is None:
+			raise ValueError('You haven\'t passed the group id!')
+		
 		self.token = token
 		self.group_id = group_id
 		self.vk_session = VkApi(token=token)
