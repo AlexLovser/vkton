@@ -6,6 +6,8 @@ from PIL import Image
 
 
 class Object:
+	get_from_database = None
+
 	def __getattribute__(self, __name: str):
 		if __name != 'last_used':
 			self.last_used = datetime.now()
@@ -13,7 +15,7 @@ class Object:
 			return super().__getattribute__(__name)
 		except:
 			return None
-
+		
 
 class User(Object):
 	def __init__(self, **kwargs):
@@ -144,7 +146,7 @@ class Attachment:
 		response = requests.get(
 			'https://api.vk.com/method/messages.getById', 
 			params={
-				'access_token': TOKEN, 
+				'access_token': self.message.user.bot.token, 
 				'v': 5.131, 
 				'message_ids': [self.message.message_id]
 			}

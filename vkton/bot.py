@@ -35,36 +35,37 @@ class MyLongPool(VkLongPoll):
 				print('[ ERR ]', err)
 				sleep(3)
 
+class SingletonMeta(type):
+    _instances = {}
 
-class Bot:
-	__singleton = None
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            instance = super().__call__(*args, **kwargs)
+            cls._instances[cls] = instance
+        return cls._instances[cls]
+
+class Bot(metaclass=SingletonMeta):
 	vk_session = None
 	longpool = None
 	events = {}
+	token = None
+	group_id = None
+	allowed_users = None
 	sub_events = {}
 	user_cache: dict[str, User] = {}
-
-	def __new__(cls, *args, **kwargs):
-		if isinstance(cls.__singleton, cls):
-			return cls.__singleton
-		
-		cls.__singleton = cls(*args, **kwargs)
-		return cls.__singleton
-
  
-	def __init__(self, token: str = None, group_id: int = None, allowed_users = '__all__'):
-		if token is None:
-			raise ValueError('You haven\'t passed the bot token!')
-		
-		if token is None:
-			raise ValueError('You haven\'t passed the group id!')
-		
-		self.token = token
-		self.group_id = group_id
+	def __init__(self, token: str = None, group_id: int = None, allowed_users = None):
+
+		if not self.token or token:
+			self.token = token
+		if not self.group_id or group_id:
+			self.group_id = group_id
+
 		self.vk_session = VkApi(token=token)
 		self.longpoll = MyLongPool(self.vk_session)
 		self.back_button = Button('Назад', 'red')
-		self.allowed_users = allowed_users
+		if not self.allowed_users:
+			self.allowed_users = allowed_users
 
 		logging.info('The bot is online')
 
@@ -286,6 +287,9 @@ class Bot:
 			bot=self
 		)
 
+		if User.get_from_database:
+			user.db = User.get_from_database(user_id)
+
 		self.user_cache[user.id] = user
 
 		return user
@@ -326,7 +330,7 @@ class Bot:
 		response = requests.get(
 			'https://api.vk.com/method/photos.saveMessagesPhoto',
 			params={
-				'access_token': TOKEN,
+				'access_token': self.token,
 				'v': '5.131',
 				'server': uploaded_data['server'],
 				'photo': uploaded_data['photo'],
@@ -354,6 +358,15 @@ class Bot:
 		return photo_data
 
 	def run(self,):
+		if self.token is None:
+			raise ValueError('You haven\'t passed the bot token!')
+		
+		if self.group_id is None:
+			raise ValueError('You haven\'t passed the group id!')
+		
+		if not self.allowed_users:
+			self.allowed_users = '__all__'
+
 		def cache_clearing_task():
 			new_cache = {}
 
